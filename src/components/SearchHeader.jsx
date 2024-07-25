@@ -2,8 +2,9 @@ import React, { useEffect, useState } from 'react';
 import { BsYoutube, BsSearch } from 'react-icons/bs';
 import { Link, useNavigate, useParams } from 'react-router-dom';
 import Darkmode from './Darkmode';
+import HambergerMenu from './HambergerMenu';
 
-export default function SearchHeader() {
+export default function SearchHeader({ isClick, setIsClick }) {
   const { keyword } = useParams();
   const navigate = useNavigate();
   const [text, setText] = useState('');
@@ -13,7 +14,8 @@ export default function SearchHeader() {
   };
   useEffect(() => setText(keyword || ''), [keyword]);
   return (
-    <header className="w-full flex p-4 text-2xl border-b border-zinc-600 mb-8 box-border">
+    <header className="w-full flex items-center p-4 px-6 text-2xl border-b border-zinc-600 mb-8 box-border">
+      <HambergerMenu isClick={isClick} setIsClick={setIsClick} />
       <Link to="/" className="flex items-center">
         <BsYoutube className="text-3xl text-brand" />
         <h1 className=" ml-1 text-2xl font-logo font-medium tracking-tight">

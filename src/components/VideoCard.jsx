@@ -8,19 +8,13 @@ export default function VideoCard({ video, type }) {
   const isList = type === 'list';
   return (
     <li
-      className={
-        isList ? 'flex gap-2 m-2 mb-4 cursor-pointer' : 'mb-4 cursor-pointer'
-      }
+      className={isList ? 'mb-4 cursor-pointer' : 'mb-4 cursor-pointer'}
       onClick={() =>
         navigate(`/videos/watch/${video.id}`, { state: { video } })
       }
     >
       <img
-        className={
-          isList
-            ? 'w-44 mr-2 rounded-lg hover:rounded-none duration-200'
-            : 'w-full rounded-lg hover:rounded-none duration-200'
-        }
+        className="rounded-lg hover:rounded-none duration-200"
         src={thumbnails.medium.url}
         alt="title"
       />
