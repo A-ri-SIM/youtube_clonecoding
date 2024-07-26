@@ -18,7 +18,7 @@ export default class Youtube {
         params: {
           part: 'snippet',
           channelId: id,
-          maxResults: 25,
+          maxResults: 50,
           order: 'date',
           type: 'video',
           sameChannelVideoId: id,
@@ -42,7 +42,7 @@ export default class Youtube {
       .search({
         params: {
           part: 'snippet',
-          maxResults: 25,
+          maxResults: 50,
           type: 'video',
           q: keyword,
         },
@@ -56,7 +56,7 @@ export default class Youtube {
       .videos({
         params: {
           part: 'snippet',
-          maxResults: 25,
+          maxResults: 50,
           chart: 'mostPopular',
           regionCode: 'KR',
         },

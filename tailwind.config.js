@@ -11,7 +11,9 @@ module.exports = {
                 roboto: "roboto",
                 logo: "Oswald",
             },
+            
         },
     },
     plugins: [require("@tailwindcss/line-clamp")],
+    
 };

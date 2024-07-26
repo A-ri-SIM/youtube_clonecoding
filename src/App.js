@@ -9,13 +9,15 @@ const queryClient = new QueryClient();
 
 function App() {
   const [isClick, setIsClick] = useState(true);
+  const [watched, setWatched] = useState([]);
+  const [addVideo, setAddVideo] = useState([]);
   return (
     <YoutubeApiProvider>
       <SearchHeader isClick={isClick} setIsClick={setIsClick} />
       <QueryClientProvider client={queryClient}>
         <div className="flex">
           <Menu isClick={isClick} setIsClick={setIsClick} />
-          <Outlet />
+          <Outlet context={{ watched, setWatched, addVideo, setAddVideo }} />
         </div>
       </QueryClientProvider>
     </YoutubeApiProvider>

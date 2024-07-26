@@ -9,7 +9,7 @@ import Videos from './page/Videos';
 import VideoDetail from './page/VideoDetail';
 import Subscribe from './page/Subscribe';
 import ViewingHistory from './page/ViewingHistory';
-import WatchLater from './page/WatchLater';
+import PlayList from './page/PlayList';
 
 const router = createBrowserRouter([
   {
@@ -23,7 +23,7 @@ const router = createBrowserRouter([
       { path: 'videos/watch/:videoId', element: <VideoDetail /> },
       { path: 'videos/subscribe', element: <Subscribe /> },
       { path: 'videos/viewinghistory', element: <ViewingHistory /> },
-      { path: 'videos/watchlater', element: <WatchLater /> },
+      { path: 'videos/playlist', element: <PlayList /> },
     ],
   },
 ]);

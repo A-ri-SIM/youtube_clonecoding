@@ -32,11 +32,11 @@ export default function Menu({ isClick }) {
           <p className={isClick ? 'block ml-4' : 'hidden'}>시청기록</p>
         </Link>
         <Link
-          to={'/videos/watchlater'}
+          to={'/videos/playlist'}
           className="flex items-center mb-8 hover:scale-105 duration-300"
         >
           <RiPlayList2Fill className="w-7 h-7" />
-          <p className={isClick ? 'block ml-4' : 'hidden'}>나중에 볼 동영상</p>
+          <p className={isClick ? 'block ml-4' : 'hidden'}>재생 목록</p>
         </Link>
       </div>
 
