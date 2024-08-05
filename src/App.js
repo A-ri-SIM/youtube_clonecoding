@@ -8,7 +8,8 @@ import Menu from './components/Menu';
 const queryClient = new QueryClient();
 
 function App() {
-  const [isClick, setIsClick] = useState(true);
+  const width = window.screenX;
+  const [isClick, setIsClick] = useState(width > 640 ? false : true);
   const [watched, setWatched] = useState([]);
   const [addVideo, setAddVideo] = useState([]);
   return (

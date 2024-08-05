@@ -8,7 +8,11 @@ import { SiYoutubestudio, SiYoutubemusic, SiYoutubekids } from 'react-icons/si';
 
 export default function Menu({ isClick }) {
   return (
-    <nav className={isClick ? 'min-w-52 mx-6 h-screen' : 'mx-6 h-screen'}>
+    <nav
+      className={
+        isClick ? 'min-w-52 mx-6 h-screen' : 'mx-6 h-screen max-[640px]:hidden'
+      }
+    >
       <div>
         <Link
           to={'/'}
