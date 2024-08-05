@@ -9,7 +9,7 @@ const queryClient = new QueryClient();
 
 function App() {
   const width = window.screenX;
-  const [isClick, setIsClick] = useState(width > 640 ? false : true);
+  const [isClick, setIsClick] = useState(false);
   const [watched, setWatched] = useState([]);
   const [addVideo, setAddVideo] = useState([]);
   return (

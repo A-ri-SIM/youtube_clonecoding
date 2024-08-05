@@ -9,7 +9,9 @@ export default function VideoCard({ video, type, flex, added }) {
   const isList = type === 'list';
   return (
     <li
-      className={flex ? 'flex mx-3 mb-4 cursor-pointer ' : 'mx-3 mb-4 cursor-pointer'}
+      className={
+        flex ? 'flex mx-3 mb-4 cursor-pointer ' : 'mx-3 mb-4 cursor-pointer'
+      }
       onClick={() =>
         navigate(`/videos/watch/${video.id}`, { state: { video } })
       }
