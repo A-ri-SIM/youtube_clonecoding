@@ -23,6 +23,15 @@ body {
   @apply w-full;
 }
 
+@layer components {
+  .searchbar {
+    width: 100%;
+    overflow: hidden;
+    border-radius: 50px;
+    margin-left: 2rem;
+  }
+}
+
 /* code {
     font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New", monospace;
 } */

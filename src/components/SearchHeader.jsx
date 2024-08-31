@@ -40,7 +40,7 @@ export default function SearchHeader({ isClick, setIsClick }) {
       >
         <input
           id="searchBar"
-          className="w-5/12 pl-4 border border-zinc-600 text-base text-black rounded-s-full max-[640px]:hidden rounded-full w-full ml-4"
+          className="w-5/12 pl-4 border border-zinc-600 text-base text-black rounded-s-full max-[640px]:searchbar"
           type="text"
           placeholder="Search..."
           value={text}
