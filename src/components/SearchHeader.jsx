@@ -20,11 +20,14 @@ export default function SearchHeader({ isClick, setIsClick }) {
         .classList.remove('max-[640px]:hidden');
     }
   };
+  const hiddenSearchBar = () => {
+    document.querySelector('#searchBar').classList.add('max-[640px]:hidden');
+  };
   useEffect(() => setText(keyword || ''), [keyword]);
   return (
     <header className="w-full flex items-center p-4 px-6 text-2xl border-b border-zinc-600 mb-8 box-border">
       <HambergerMenu isClick={isClick} setIsClick={setIsClick} />
-      <Link to="/" className="flex items-center">
+      <Link to="/" className="flex items-center" onClick={hiddenSearchBar}>
         <BsYoutube className="text-3xl text-brand" />
         <h1 className=" ml-1 text-2xl font-logo font-medium tracking-tight">
           YouTube
