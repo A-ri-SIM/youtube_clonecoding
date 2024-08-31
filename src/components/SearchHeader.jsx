@@ -8,9 +8,17 @@ export default function SearchHeader({ isClick, setIsClick }) {
   const { keyword } = useParams();
   const navigate = useNavigate();
   const [text, setText] = useState('');
+  const width = window.innerWidth;
   const handleSubmit = (e) => {
     e.preventDefault();
     navigate(`/videos/${text}`);
+  };
+  const showSearchBar = () => {
+    if (width <= 640) {
+      document
+        .querySelector('#searchBar')
+        .classList.remove('max-[640px]:hidden');
+    }
   };
   useEffect(() => setText(keyword || ''), [keyword]);
   return (
@@ -22,16 +30,24 @@ export default function SearchHeader({ isClick, setIsClick }) {
           YouTube
         </h1>
       </Link>
-      <form className="w-full flex justify-center" onSubmit={handleSubmit}>
+      <form
+        id="searchBox"
+        className="w-full flex justify-center max-[640px]:justify-end"
+        onSubmit={handleSubmit}
+      >
         <input
-          className="w-5/12 pl-4 border border-zinc-600 text-base text-gray-50 rounded-s-full"
+          id="searchBar"
+          className="w-5/12 pl-4 border border-zinc-600 text-base text-black rounded-s-full max-[640px]:hidden rounded-full w-full ml-4"
           type="text"
           placeholder="Search..."
           value={text}
           onChange={(e) => setText(e.target.value)}
         />
-        <button className="bg-zinc-200 px-6 rounded-e-full border border-zinc-600 border-l-0 dark:text-black">
-          <BsSearch className="text-base" />
+        <button
+          className="bg-zinc-200 px-6 rounded-e-full border border-zinc-600 border-l-0 dark:text-black max-[640px]:bg-transparent border-none"
+          onClick={showSearchBar}
+        >
+          <BsSearch className="text-base max-[640px]:dark:text-white" />
         </button>
       </form>
       <Darkmode />
