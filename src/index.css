@@ -26,7 +26,6 @@ body {
 @layer components {
   .searchbar {
     width: 100%;
-    overflow: hidden;
     border-radius: 50px;
     margin-left: 2rem;
   }
